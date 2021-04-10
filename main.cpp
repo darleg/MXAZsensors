@@ -1,4 +1,5 @@
 #include "mbed.h"
+#include "console.h"
 #include "OnBoard.h"
 #include "DevI2C.h"
 #include "HTS221Sensor.h"
@@ -15,14 +16,6 @@ PinName SDA = PB_9;
 PinName SCL = PB_8;
 
 Thread thread;
-
-
-static BufferedSerial az(TX, RX);
-
-FileHandle *mbed::mbed_override_console(int fd)
-{
-    return &az;
-}
 
 static DevI2C devI2c(SDA, SCL);
 
