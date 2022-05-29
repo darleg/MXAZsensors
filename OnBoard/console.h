@@ -13,10 +13,3 @@ enum bg {bgblk=40, bgred=41, bggrn=42, bgyel=43, bgblu=44};
 #define setfgbb printf("\033[%d;%d;%dm", bld, fggrn, bgblu)
 #define halfline printf("************************")
 #define blankLine printf("\n\t*\t\t\t\t\t\t*");
-
-static BufferedSerial az(TX, RX);
-
-FileHandle *mbed::mbed_override_console(int fd)
-{
-    return &az;
-}
